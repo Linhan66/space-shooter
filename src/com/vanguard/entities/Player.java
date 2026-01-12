@@ -17,7 +17,7 @@ public class Player extends Entity {
     }
     public void setDefaultValues() {
         x = gp.gamewidth / 2 - 64; // Center the player horizontally
-        z = (int) (gp.gameheight * 0.256);
+        z = (int) (gp.gameheight * 0.256); //set z to make a sepcific ratio
         y = gp.gameheight - z; // Center the player vertically
         speed = 6;
         System.out.println(y);
