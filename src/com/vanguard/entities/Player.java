@@ -2,6 +2,7 @@ package com.vanguard.entities;
 import com.vanguard.graphic.GamePanel;
 import com.vanguard.graphic.KeyHandler;
 import java.awt.Graphics2D;
+import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
@@ -27,6 +28,7 @@ public class Player extends Entity {
         // Load player images here
         try {
             Ship1A = ImageIO.read(getClass().getResourceAsStream("/player/Ship_1_A_Medium_NoLight.png"));
+            Death = Toolkit.getDefaultToolkit().getImage("res/animation/Preview.gif");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -45,11 +47,14 @@ public class Player extends Entity {
         if (keyH.rightPressed) {
             x += speed;
         }
+        
+        
     }
 
     public void draw(Graphics2D g2) {
 
         BufferedImage image = Ship1A; //unless different ship is selected
         g2.drawImage(image, x, y, 128, 128, null); // Draw the player ship at its current position
+        
     }
-}
+}       

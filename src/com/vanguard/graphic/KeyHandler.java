@@ -1,9 +1,9 @@
 package com.vanguard.graphic;
-import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class KeyHandler implements KeyListener {
-    public boolean upPressed, downPressed, leftPressed, rightPressed;
+    public boolean upPressed, downPressed, leftPressed, rightPressed, ZPressed;
     @Override
     public void keyPressed(KeyEvent e) {
         // Handle key press events
@@ -19,6 +19,9 @@ public class KeyHandler implements KeyListener {
         }
         if (code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT) {
             rightPressed = true;
+        }
+        if (code == KeyEvent.VK_Z) {
+            ZPressed = true;
         }
     }
 
@@ -36,6 +39,9 @@ public class KeyHandler implements KeyListener {
         }
         if (code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT) {
             rightPressed = false;
+        }
+        if (code == KeyEvent.VK_Z) {
+            ZPressed = false;
         }
     }
 
